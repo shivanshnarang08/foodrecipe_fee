@@ -1,0 +1,49 @@
+
+body, h1, h2, p, input, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  body {
+    background: url('exra4.jpg') center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  #contact {
+    max-width: 400px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  button,
+  input {
+    margin-bottom: 15px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    #contact {
+      width: 80%;
+    }
+  }
+  
