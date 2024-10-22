@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFiesta</title>
+    <link rel="stylesheet" href="1.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h3>FlavorFiesta</h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="recipes1.html">whats-today</a></li>
+                    <li><a href="buyitems/grocery.html">Buy Items</a></li>
+                    <li><a href="cake2/home.html"> Desert Guide</a></li>
+                    <li><a href="recipe page/Favourites.html">Recipes</a></li>
+                    <li><img src="download.jpg" alt="User avatar" width="30" height="30"></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <section class="hii">
+            <div class="hii-content">
+                <h3>There is no sincere love than the love for food.</h3>
+                <p>Delight Your Palate: Explore Culinary Wonderland! <br>Discover a Cornucopia of Flavorful Recipes, Expert Tips<br>, and Irresistible Culinary Creations. Embark on this journey</p>
+            </div>
+        </section>
+    
+        <section class="cuisines">
+            <h2>Famous Cuisines</h2>
+            <div class="cuisine-images">
+                <img src="cuisine1.jpg" alt="Italian cuisine - pasta and pizza" width="250" height="400">
+                <img src="cuisine2.jpg" alt="Japanese cuisine - sushi and ramen" width="250" height="400">
+                <img src="cuisine3.jpg" alt="Indian cuisine - curry and naan" width="250" height="400">
+                <img src="cuisine4.jpg" alt="Mexican cuisine - tacos and guacamole" width="250" height="400">
+            </div>
+        </section>
+    
+        <section class="whats-today">
+            <h2>What's for Today</h2>
+            <div class="today-items">
+                <div class="today-item">
+                    <img src="today1.jpg" alt="Grilled salmon with asparagus" width="250" height="400">
+                    <div class="today-text">
+                        <h3>Grilled Salmon</h3>
+                        <p>A delightful dish to tantalize your taste buds.</p>
+                    </div>
+                </div>
+                <div class="today-item">
+                    <img src="today2.jpg" alt="Vegetarian buddha bowl" width="250" height="400">
+                    <div class="today-text">
+                        <h3>Veggie Buddha Bowl</h3>
+                        <p>A perfect blend of flavors and textures.</p>
+                    </div>
+                </div>
+                <div class="today-item">
+                    <img src="today1.jpg" alt="Chocolate lava cake" width="250" height="400">
+                    <div class="today-text">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Indulge in this decadent dessert.</p>
+                    </div>
+                </div>
+                <div class="today-item">
+                    <img src="today4.jpg" alt="Spinach and feta quiche" width="250" height="400">
+                    <div class="today-text">
+                        <h3>Spinach Feta Quiche</h3>
+                        <p>Try this mouthwatering savory pie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="recipes" id="dietary-preferences">
+            <h2>Recipes Based On Dietary Preferences</h2>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vegan">Vegan</button>
+                <button class="filter-btn" data-filter="nut-free">Nut-Free</button>
+                <button class="filter-btn" data-filter="gluten-free">Gluten-Free</button>
+                <button class="filter-btn" data-filter="dairy-free">Dairy-Free</button>
+            </div>
+            
+            <div class="recipe-container">
+                <div class="recipe-card" data-category="vegan">
+                    <img src="cuisine1.jpg" alt="Colorful vegan salad" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Rainbow Vegan Salad</div>
+                        <div class="recipe-description">A vibrant and nutritious salad packed with fresh vegetables.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="vegan">
+                    <img src="cuisine2.jpg" alt="Vegan stir fry with vegetables" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Vegan Stir Fry</div>
+                        <div class="recipe-description">Quick and easy stir-fry loaded with vegetables.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="vegan">
+                    <img src="cu2.jpg" alt="Vegan tacos with various toppings" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Vegan Tacos</div>
+                        <div class="recipe-description">Delicious tacos filled with beans and fresh veggies.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="vegan">
+                    <img src="cu1.jpg" alt="Pasta with a vegan sauce" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Vegan Pasta</div>
+                        <div class="recipe-description">A creamy and satisfying pasta dish without dairy.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="nut-free">
+                    <img src="cuisine3.jpg" alt="Nut-free salad with fresh ingredients" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Nut-Free Salad</div>
+                        <div class="recipe-description">A fresh salad made with diverse ingredients without nuts.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="nut-free">
+                    <img src="cuisine4.jpg" alt="Nut-free casserole" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Nut-Free Casserole</div>
+                        <div class="recipe-description">A hearty casserole without any nuts for safety.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="nut-free">
+                    <img src="today1.jpg" alt="Nut-free soup" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Nut-Free Soup</div>
+                        <div class="recipe-description">A warming soup perfect for chilly days.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="nut-free">
+                    <img src="today2.jpg" alt="Nut-free risotto" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Nut-Free Risotto</div>
+                        <div class="recipe-description">Rich and creamy risotto without any nuts.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="gluten-free">
+                    <img src="today4.jpg" alt="Gluten-free pasta" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Gluten-Free Pasta</div>
+                        <div class="recipe-description">Pasta made from gluten-free flour, delicious and safe.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="gluten-free">
+                    <img src="cu2.jpg" alt="Gluten-free bread" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Gluten-Free Bread</div>
+                        <div class="recipe-description">Soft and fluffy gluten-free bread for sandwiches.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="gluten-free">
+                    <img src="cu1.jpg" alt="Gluten-free cookies" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Gluten-Free Cookies</div>
+                        <div class="recipe-description">Sweet and chewy cookies made without gluten.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="gluten-free">
+                    <img src="cuisine3.jpg" alt="Gluten-free cake" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Gluten-Free Cake</div>
+                        <div class="recipe-description">Delicious cake alternative suitable for gluten-free diets.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="dairy-free">
+                    <img src="cuisine4.jpg" alt="Dairy-free smoothie" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Dairy-Free Smoothie</div>
+                        <div class="recipe-description">Refreshing smoothie made without dairy products.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="dairy-free">
+                    <img src="cuisine1.jpg" alt="Dairy-free soup" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Dairy-Free Soup</div>
+                        <div class="recipe-description">Comforting soup free from dairy ingredients.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="dairy-free">
+                    <img src="cuisine3.jpg" alt="Dairy-free pudding" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Dairy-Free Pudding</div>
+                        <div class="recipe-description">Sweet chocolate pudding made without any dairy.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="dairy-free">
+                    <img src="cuisine1.jpg" alt="Dairy-free yogurt" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Dairy-Free Yogurt</div>
+                        <div class="recipe-description">Creamy yogurt made from plant-based ingredients.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="recipes" id="special-categories">
+            <h2>Special Recipe Categories</h2>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+                <button class="filter-btn" data-filter="beverages">Beverages</button>
+                <button class="filter-btn" data-filter="cookies">Cookies</button>
+                <button class="filter-btn" data-filter="ice-cream">Ice Cream</button>
+            </div>
+            
+            <div class="recipe-container">
+                <div class="recipe-card" data-category="desserts">
+                    <img src="today1.jpg" alt="Decadent chocolate cake" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Decadent Chocolate Cake</div>
+                        <div class="recipe-description">A rich and moist chocolate cake perfect for any occasion.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="desserts">
+                    <img src="today2.jpg" alt="Vanilla pudding in a cup" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Vanilla Pudding</div>
+                        <div class="recipe-description">Creamy and smooth vanilla pudding for a delightful dessert.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="desserts">
+                    <img src="today4.jpg" alt="Cheesecake with berry topping" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Berry Cheesecake</div>
+                        <div class="recipe-description">Creamy cheesecake topped with fresh berries.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="desserts">
+                    <img src="cuisine1.jpg" alt="Key lime pie" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Key Lime Pie</div>
+                        <div class="recipe-description">Tangy and refreshing key lime pie.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="beverages">
+                    <img src="cuisine2.jpg" alt="Mango lassi" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Mango Lassi</div>
+                        <div class="recipe-description">A refreshing yogurt drink blended with ripe mangoes.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="beverages">
+                    <img src="cuisine3.jpg" alt="Glass of lemonade" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Fresh Lemonade</div>
+                        <div class="recipe-description">Homemade lemonade, sweet and tangy.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="beverages">
+                    <img src="cuisine4.jpg" alt="Iced tea with lemon" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Iced Tea</div>
+                        <div class="recipe-description">Cool down with this refreshing iced tea.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="beverages">
+                    <img src="cuisine1.jpg" alt="Fruit smoothie" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Fruit Smoothie</div>
+                        <div class="recipe-description">A healthy blend of various fruits.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="cookies">
+                    <img src="cuisine2.jpg" alt="Chocolate chip cookies" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Chocolate Chip Cookies</div>
+                        <div class="recipe-description">Classic cookies filled with chocolate chips.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="cookies">
+                    <img src="cuisine3.jpg" alt="Oatmeal cookies" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Oatmeal Cookies</div>
+                        <div class="recipe-description">Chewy oatmeal cookies with raisins.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="cookies">
+                    <img src="cuisine4.jpg" alt="Peanut butter cookies" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Peanut Butter Cookies</div>
+                        <div class="recipe-description">Soft and tasty peanut butter cookies.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="cookies">
+                    <img src="cu2.jpg" alt="Snickerdoodle cookies" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Snickerdoodle Cookies</div>
+                        <div class="recipe-description">Cinnamon-spiced cookies that are soft and chewy.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="ice-cream">
+                    <img src="cu1.jpg" alt="Vanilla ice cream in a bowl" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Vanilla Ice Cream</div>
+                        <div class="recipe-description">Creamy and smooth vanilla ice cream.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="ice-cream">
+                    <img src="today4.jpg" alt="Chocolate ice cream in a bowl" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Chocolate Ice Cream</div>
+                        <div class="recipe-description">Indulgent chocolate ice cream made from scratch.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="ice-cream">
+                    <img src="today2.jpg" alt="Strawberry ice cream in a bowl" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Strawberry Ice Cream</div>
+                        <div class="recipe-description">Refreshing homemade strawberry ice cream.</div>
+                    </div>
+                </div>
+                <div class="recipe-card" data-category="ice-cream">
+                    <img src="today1.jpg" alt="Mango ice cream in a bowl" class="recipe-image" width="250" height="200">
+                    <div class="recipe-info">
+                        <div class="recipe-title">Mango Ice Cream</div>
+                        <div class="recipe-description">Exotic mango ice cream bursting with flavor.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates on new products and upcoming sales</p>
+            <form class="newsletter-form" action="https://flavorfiesta.com/subscribe" method="post">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>FlavorFiesta is your one-stop shop for fresh, high-quality groceries delivered right to your doorstep.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="recipes1.html">Recipes</a></li>
+                        <li><a href="buyitems/grocery.html">Buy Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@flavorfiesta.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FlavorFiesta. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script>
+            function initializeFilters(Id) {
+                const section = document.getElementById(Id);
+                const filterButtons = section.querySelectorAll('.filter-btn');
+                const recipeCards = section.querySelectorAll('.recipe-card');
+    
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.getAttribute('data-filter');
+    
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+    
+                        recipeCards.forEach(c => {
+                            if (filter === 'all' || c.getAttribute('data-category') === filter) {
+                                c.style.display = 'block';
+                            } else {
+                                c.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+    
+            initializeFilters('dietary-preferences');
+            initializeFilters('special-categories');
+        </script>
+    </body>
+    </html>
+    </body></html>
