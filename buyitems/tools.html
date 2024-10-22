@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tools.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ 
+     <!-- <style>
+        body {
+            background-color: lightblue; 
+        }
+    </style> -->
+</head>
+<body>
+    <section id="popular-product">
+        <div class="product-heading">
+            <h3>TOOLS</h3>
+        </div>
+        <div class="product-container">
+            <div class="product-box">
+                <img alt="apple" src="images/whisk.jpg">
+                <strong>Whisk</strong>
+                <span class="quantity">Stainless steel Kitchen utensil</span>
+                <span class="price">&#8377;149.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="whisk" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/spatula.jpg">
+                <strong>Spatula</strong>
+                <span class="quantity">Stainless Steel Spatula Set</span>
+                <span class="price">&#8377;171.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="spatula">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/blender.jpg">
+                <strong>Blender</strong>
+                <span class="quantity">Modern Blender,1000W,1.5L capacity </span>
+                <span class="price">&#8377;7500.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="blender">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/cake pan.jpg">
+                <strong>Cake Pan</strong>
+                <span class="quantity">Traditional Bread Baking Pan </span>
+                <span class="price">&#8377;399.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="cake-pan" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/cheese grater.jpg">
+                <strong>Cheese grater</strong>
+                <span class="quantity">SIGNAMIO Grater cheese,ginger,garlic </span>
+                <span class="price">&#8377;189.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="cheese-grater">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/cutting board.jpg">
+                <strong>Cutting board </strong>
+                <span class="quantity">Chopping board for kitchen vegetables</span>
+                <span class="price">&#8377;211.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="cutting-board">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/garlic press.jpg">
+                <strong>Garlic press</strong>
+                <span class="quantity">Garlic press Mincer Ginger Crusher </span>
+                <span class="price">&#8377;245.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="garlic-press" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/muffin tin.jpg">
+                <strong>Muffin Tin</strong>
+                <span class="quantity">Muffin Tin Tray 12 slot mini midi shape </span>
+                <span class="price">&#8377;290.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="muffin-tin" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/electricwhisk.jpg">
+                <strong>Electric whisk</strong>
+                <span class="quantity">Electric Speed hand mixer Egg beater </span>
+                <span class="price">&#8377;596.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="electric-whisk">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/potato smasher.jpg">
+                <strong>Tomato</strong>
+                <span class="quantity">PG home products potato smasher</span>
+                <span class="price">&#8377;426.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="potato-smasher" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/roasting pan.jpg">
+                <strong>Tomato</strong>
+                <span class="quantity">Chefkit hard anodized aluminium tadka pan </span>
+                <span class="price">&#8377;259.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="roastin-pan" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="apple" src="images/cooking cutter.jpg">
+                <strong>Cooking cutter</strong>
+                <span class="quantity">Cloudzy Cookie cutter shapes set of 12</span>
+                <span class="price">&#8377;349.00</span>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i> Add Cart
+                </a>
+                <a href="#" class="like-btn" data-product="cooking-cutter" >
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const likeButtons = document.querySelectorAll('.like-btn');
+
+    likeButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor behavior
+            const productName = button.getAttribute('data-product'); // Get the product name
+            
+            // Toggle the 'liked' state
+            if (button.classList.contains('liked')) {
+                button.classList.remove('liked');
+                button.innerHTML = '<i class="far fa-heart"></i>'; // Change to unliked state
+                alert(`${productName.charAt(0).toUpperCase() + productName.slice(1)} removed from wishlist!`);
+            } else {
+                button.classList.add('liked');
+                button.innerHTML = '<i class="fas fa-heart"></i>'; // Change to liked state
+                alert(`${productName.charAt(0).toUpperCase() + productName.slice(1)} added to wishlist!`);
+            }
+        });
+    });
+});
+</script>
+</html>
