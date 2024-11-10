@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Find Your Favorite Recipe</h1>
+        <form id="searchForm">
+            <input type="text" id="query" placeholder="Search for a recipe..." required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="results" class="results-grid"></div>
+    </div>
+    <script src="script1.js"></script>
 </body>
-</html> 
+</html>
