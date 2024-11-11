@@ -134,11 +134,14 @@ nav li img {
 }
 
 .today-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* width: 100%;
+    height: 100%; */
+    /* object-fit: contain; */
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
+    background-size: cover;      
+    /* background-position: center;  */
+    
 }
 
 .today-text {
@@ -164,9 +167,9 @@ nav li img {
     opacity: 1;
 }
 
-.today-item img:hover {
+/* .today-item img:hover {
     transform: scale(1.1);
-}
+} */
 
 .today-items {
     display: flex;
