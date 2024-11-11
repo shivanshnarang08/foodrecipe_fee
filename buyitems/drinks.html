@@ -16,6 +16,7 @@
     <section id="popular-product">
         <div class="product-heading">
             <h3>DRINKS</h3>
+            <a href="gro.html">Go To Cart</a>
         </div>
         <div class="product-container">
             <div class="product-box">
@@ -23,7 +24,7 @@
                 <strong>Vinegar</strong>
                 <span class="quantity">Borges Red & White wine vinegar 250ml</span>
                 <span class="price">&#8377;419.00</span>
-                <a href="#" class="cart-btn">
+                <a href="#" class="cart-btn" onclick="addToCart('Vinegar', 419 , 'images/vinegar1.webp')">
                     <i class="fas fa-shopping-bag"></i> Add Cart
                 </a>
                 <a href="#" class="like-btn">
@@ -35,7 +36,7 @@
                 <strong>Coconut Milk</strong>
                 <span class="quantity">Pantai coconut milk 400 ml</span>
                 <span class="price">&#8377;75.00</span>
-                <a href="#" class="cart-btn">
+                <a href="#" class="cart-btn" onclick="addToCart('coconut milk', 75, 'images/coconutmilk.webp')">
                     <i class="fas fa-shopping-bag"></i> Add Cart
                 </a>
                 <a href="#" class="like-btn">
@@ -47,7 +48,7 @@
                 <strong>Hot chocolate</strong>
                 <span class="quantity">Hot chocolate drink powder mix 200 g</span>
                 <span class="price">&#8377;213.00</span>
-                <a href="#" class="cart-btn">
+                <a href="#" class="cart-btn" onclick="addToCart('Hot chocolate', 70, 'images/hot chocolate.webp')">
                     <i class="fas fa-shopping-bag"></i> Add Cart
                 </a>
                 <a href="#" class="like-btn">
@@ -166,4 +167,20 @@
     </section>
 
 </body>
+<script>
+    // Function to add product to cart and save it in localStorage
+    function addToCart(productName, price, imageUrl) {
+        // Get the current cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new item to the cart
+        cart.push({ name: productName, price: price, image: imageUrl });
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Show an alert message
+        alert(`${productName} has been added to your cart for ₹${price}.`);
+    }
+</script>
 </html>

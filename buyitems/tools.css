@@ -159,3 +159,18 @@
     max-width: 1000px;
     width: 100%;
 }
+.product-heading a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color:lightgreen; 
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.product-heading a:hover {
+    background-color: green; 
+}

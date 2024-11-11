@@ -17,6 +17,7 @@
 <section id="popular-product">
     <div class="product-heading">
         <h3 >VEGGIES</h3>
+        <a href="gro.html">Go To Cart</a>
     </div>
 
     <div class="product-container">
@@ -25,7 +26,7 @@
             <strong>Beetroot</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;80</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Beetroot', 180, 'beetroot.webp')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -38,7 +39,7 @@
             <strong>Brocolli</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;180</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Brocolli', 180, 'brocolli.jpeg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -51,7 +52,7 @@
             <strong>Cabbage</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;50</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Cabbage', 50, 'cabbage.webp')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -217,4 +218,20 @@
 </section>
 
 </body>
+<script>
+    // Function to add product to cart and save it in localStorage
+    function addToCart(productName, price, imageUrl) {
+        // Get the current cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new item to the cart
+        cart.push({ name: productName, price: price, image: imageUrl });
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Show an alert message
+        alert(`${productName} has been added to your cart for ₹${price}.`);
+    }
+</script>
 </html>

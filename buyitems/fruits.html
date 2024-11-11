@@ -17,28 +17,30 @@
 <section id="popular-product">
     <div class="product-heading">
         <h3 >FRUITS</h3>
+        <a href="gro.html">Go To Cart</a>
     </div>
 
     <div class="product-container">
         <div class="product-box">
-            <img alt="pineapple" src="pineapple.jpg">
+            <img alt="pineapple" src="pineapple.jpg"> 
             <strong>Pineapple</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;100</span>
-            <a href="#" class="cart-btn">
-                <i class="fas fa-shopping-bag"></i> Add Cart
-            </a>
+            <!-- Updated Add to Cart button with onclick event to add product to cart -->
+<a href="#" class="cart-btn" onclick="addToCart('Pineapple', 100, 'pineapple.jpg')">
+    <i class="fas fa-shopping-bag"></i> Add Cart
+</a>
             <a href="#" class="like-btn">
                 <i class="far fa-heart"></i>
             </a>
-        </div>
+        </div> 
 
         <div class="product-box">
             <img alt="grapes" src="grapes.jpeg">
             <strong>Grapes</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;110</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Grapes', 110, 'C:\Users\hp\Desktop\Food Recipe Website\grapes.jpeg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -51,7 +53,7 @@
             <strong>Kiwi</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;150</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Kiwi', 150, 'C:\Users\hp\Desktop\Food Recipe Website\kiwi.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -64,7 +66,7 @@
             <strong>Litchi</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;50</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Litchi', 50, 'C:\Users\hp\Desktop\Food Recipe Website\litchi.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -77,7 +79,7 @@
             <strong>Mango</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;170</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Mango', 170, 'C:\Users\hp\Desktop\Food Recipe Website\mango.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -89,7 +91,7 @@
             <strong>Orange</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;40</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Orange', 40, 'C:\Users\hp\Desktop\Food Recipe Website\orange.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -103,9 +105,9 @@
         <div class="product-box">
             <img alt="wm" src="wm.jpeg">
             <strong>Watermelon</strong>
-            <span class="quantity">1 KG</span>
+            <span class="quantity">2 KG</span>
             <span class="price">&#8377;50</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('Watermelon', 50, 'C:\Users\hp\Desktop\Food Recipe Website\Watermelon.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -118,7 +120,7 @@
             <strong>strawbeery</strong>
             <span class="quantity">1 KG</span>
             <span class="price">&#8377;110</span>
-            <a href="#" class="cart-btn">
+            <a href="#" class="cart-btn" onclick="addToCart('strawbeery', 110 , 'C:\Users\hp\Desktop\Food Recipe Website\strawbeery.jpg')">
                 <i class="fas fa-shopping-bag"></i> Add Cart
             </a>
             <a href="#" class="like-btn">
@@ -215,6 +217,23 @@
     </div>
 </div>
 </section>
+<script>
+    // Function to add product to cart and save it in localStorage
+    function addToCart(productName, price, imageUrl) {
+        // Get the current cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new item to the cart
+        cart.push({ name: productName, price: price, image: imageUrl });
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Show an alert message
+        alert(`${productName} has been added to your cart for ₹${price}.`);
+    }
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+        
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            gap: 20px; /* Adds space between the two sections */
+        }
+  
+        .head {
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+  
+        .total {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #666;
+        }
+  
+        #totalnum {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+  
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+  
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+  
+        td {
+            background-color: #fff;
+        }
+  
+        img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 4px;
+        }
+  
+        .price-details-container {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0; /* Prevents shrinking in flex containers */
+        }
+  
+        .price-details {
+            margin-bottom: 20px;
+        }
+  
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+  
+        .price-row:last-child {
+            border-bottom: none;
+        }
+  
+        .discount, #discount {
+            color: #d9534f;
+        }
+  
+        .apply-coupon, .know-more {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+  
+        .generate_qr {
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        .remove-btn {
+    background-color: #e74c3c; /* Red background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Add padding around the text */
+    cursor: pointer; /* Change cursor to pointer */
+    border-radius: 5px; /* Round the corners */
+    font-size: 0.9em; /* Make text slightly smaller */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.remove-btn:hover {
+    background-color: #c0392b; /* Darker red when hovered */
+}
+
+  
+        .place-order-btn:hover {
+            background-color: #218838;
+        }
+  
+        @media (min-width: 768px) {
+            .item-container {
+                flex-direction: row;
+                align-items: flex-start; /* Align items to the start in larger screens */
+            }
+  
+            .shopping-bag-content {
+                flex: 1;
+            }
+  
+            .price-details-container {
+                width: 300px;
+                margin-left: 20px;
+            }
+        }
+  
+        @media (max-width: 767px) {
+            .price-details-container {
+                margin-top: 20px;
+            }
+        }
+  
+        @media (min-width: 1280px) {
+            .item-container {
+                padding: 30px;
+            }
+  
+            .price-details-container {
+                width: 350px;
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item-container">
+        <div class="shopping-bag-content">
+           <p class="head">Shopping Bag</p>
+           <p class="total"><span id="totalnum">0 items</span> in your bag.</p>
+           <table>
+              <thead>
+                 <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Action</th> 
+                 </tr>
+              </thead>
+              <tbody id="cart-items"></tbody>
+           </table>
+        </div>
+        <div class="price-details-container">
+           <div class="price-details">
+              <h2>PRICE DETAILS (<span id="itemscheckout">0</span> Items)</h2>
+              <div class="price-row">
+                 <span>Total MRP</span>
+                 <span id="total-mrp">₹0</span>
+              </div>
+              <div class="price-row">
+                 <span>Discount on MRP</span>
+                 <span id="discount">- ₹0</span>
+              </div>
+              <div class="price-row">
+                 <span>Shipping Fee</span>
+                 <span class="discount">FREE</span>
+              </div>
+           </div>
+           <div class="price-row total">
+              <span>Total Amount</span>
+              <span id="total-price">₹0</span>
+           </div>
+           <a href="C:\Users\hp\Desktop\Food Recipe Website\pay.html" class="generate_qr">PLACE ORDER</a>
+        </div>
+     </div>
+  
+     <script>
+        // Function to load and display cart items from localStorage
+        function loadCart() {
+            // Retrieve the cart items from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Reference to the cart items container
+            let cartItemsContainer = document.getElementById('cart-items');
+            let totalPrice = 0;
+            let itemsCount = 0;
+
+            // Check if the cart has items
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty.</td></tr>';
+                return;
+            }
+            cartItemsContainer.innerHTML = '';
+
+            // Loop through cart items and display them
+            cart.forEach((item, index) => {
+                const name = item.name || 'Unnamed Product';
+                const price = item.price || 0;
+                const image = item.image || 'default-image.jpg';
+                totalPrice += price;
+                itemsCount++;
+
+                // Append each item to the cartItemsContainer
+                cartItemsContainer.innerHTML += `
+                    <tr>
+                        <td><img src="${image}" alt="${name}"></td>
+                        <td>${name}</td>
+                        <td>₹${price}</td>
+                        <td>1</td> <!-- Assuming quantity is 1 for each item -->
+                        <td>₹${price}</td>
+                        <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
+                    </tr>
+                `;
+            });
+
+            // Update total and item count
+            document.getElementById('total-price').innerText = `₹${totalPrice}`;
+            document.getElementById('totalnum').innerText = `${itemsCount} items`;
+            document.getElementById('itemscheckout').innerText = itemsCount;
+            document.getElementById('total-mrp').innerText = `₹${totalPrice}`;
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove item from array
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
+            loadCart(); // Reload the cart
+        }
+        function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Remove the item at the given index
+    cart.splice(index, 1);
+    
+    // Update localStorage with the new cart array
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Reload the cart items to reflect the changes
+    loadCart();
+}
+
+        // Load cart items on page load
+        window.onload = loadCart;
+    </script>
+
+</body>
+</html>
