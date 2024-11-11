@@ -7,12 +7,17 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
     searchRecipes(query);
 });
 
-function searchRecipes(query) {
-    fetch(`https://api.edamam.com/search?q=${query}&app_id=${app_id}&app_key=${app_key}`)
-        .then(response => response.json())
-        .then(data => displayResults(data.hits))
-        .catch(error => console.error('Error:', error));
+async function searchRecipes(query) {
+    try {
+        const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${app_id}&app_key=${app_key}`);
+        const data = await response.json();
+        console.log(data);
+        displayResults(data.hits);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
+
 
 function displayResults(results) {
     const resultsContainer = document.getElementById('results');
@@ -25,11 +30,9 @@ function displayResults(results) {
             <h2>${recipe.label}</h2>
             <img src="${recipe.image}" alt="${recipe.label}" />
             <p>Source: ${recipe.source}</p>
-            <p>Calories: ${Math.round(recipe.calories)}</p>
-            <p>Ingredients:</p>
-            <ul>
-                ${recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`).join('')}
-            </ul>
+         
+           
+           
             <a class="view-recipe-btn" href="${recipe.url}" target="_blank">View Recipe</a>
         `;
         resultsContainer.appendChild(recipeElem);
