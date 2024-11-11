@@ -551,6 +551,27 @@
             var options = document.getElementById('shareOptions');
             options.style.display = options.style.display === 'none' ? 'block' : 'none';
         }
+
+        // function generateShareLink() {
+        //     return 'https://fusionflare.com/recipe/farmhouse-pizza';
+        // }
+
+        // function shareOnWhatsApp() {
+        //     var shareLink = generateShareLink();
+        //     var whatsappUrl = 'whatsapp://send?text=' + encodeURIComponent('Check out this amazing Avocado Toast With Eggs recipe: ' + shareLink);
+        //     window.open(whatsappUrl, '_blank');
+        // }
+
+        // function shareOnInstagram() {
+        //     alert('To share on Instagram, copy this link and paste it in your Instagram post: ' + generateShareLink());
+        // }
+
+        // function shareOnFacebook() {
+        //     var shareLink = generateShareLink();
+        //     var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareLink);
+        //     window.open(facebookUrl, '_blank');
+        // }
+
         var stars = document.querySelectorAll('#rating span');
         stars.forEach((star, index) => {
             star.addEventListener('click', function() {
@@ -563,6 +584,8 @@
                 });
             });
         });
+
+        // //////////////////////////////
         let currentSlide = 0;
         let currentSlide2 = 0;
 
@@ -581,6 +604,7 @@
             const slider = document.querySelector('.slider');
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
+
 
         function moveIngredientsSlide(direction) {
     const ingredientSlides = document.querySelectorAll('.ingredient-slide');
@@ -612,6 +636,7 @@
     document.getElementById('name').value = '';
     document.getElementById('review').value = '';
 }
+
     </script>
 </body>
 

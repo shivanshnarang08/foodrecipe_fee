@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="WishlistBox">
+        <div id="textWishlist">
+            <h1><marquee behavior="" direction="right">Your Wishlist</marquee></h1>
+            <a href="Favourites.html" target="_blank" class="Home"><button>Back to recipe page</button></a>
+        </div>
+    </div>
+    <div class="product-grid" id="wishlistContainer"></div> <!-- Container for wishlist items -->
+    <script>
+        // Function to load wishlist items on wishlist.html
+        function loadWishlistItems() {
+            const wishlistContainer = document.getElementById('wishlistContainer');
+            if (!wishlistContainer) return;
+
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Clear any existing items
+            wishlistContainer.innerHTML = ''; 
+            
+            // Display each wishlist item
+            wishlist.forEach((item, index) => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-item');
+
+                productItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" width="100%" height="250px">
+                    <div class="product-item-content">
+                        <h3>${item.name}</h3>
+                        <p>${item.category}</p>
+                        <button class="remove" onclick="removeFromWishlist(${index})">Remove</button>
+                    </div>
+                `;
+
+                wishlistContainer.appendChild(productItem);
+            });
+        }
+
+        // Function to remove an item from wishlist with confirmation
+        function removeFromWishlist(index) {
+            // Show confirmation dialog
+            const confirmRemoval = window.confirm("Are you sure you want to remove this item from your wishlist?");
+            
+            if (confirmRemoval) {
+                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+                // Remove item by index
+                wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+                // Reload the wishlist display
+                loadWishlistItems();
+            }
+        }
+
+        // Load items when the page loads
+        document.addEventListener('DOMContentLoaded', loadWishlistItems);
+    </script>
+</body>
+</html>

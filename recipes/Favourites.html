@@ -20,7 +20,6 @@
         font-weight:lighter;
         color : rgba(0, 0, 0, 0.687);
         transition: color 0.5s ease;
-        font-family: "PT Sans", sans-serif;
     }
     .nav:hover{
         color : rgba(255, 153, 0, 0.845);
@@ -175,12 +174,13 @@
 <body>
     <nav>
         <img src="logo.png" alt="404 Image not found" width="9%" id = "logo">
-        <a href="/foodrecipe_fee/shivansh/homepage.html" class = "nav" >Home</a>
-        <a href="Favourites.html" class = "nav" >Categories</a>
-        <a href="/foodrecipe_fee/buyitems/grocery.html" class = "nav" >BuyItems</a>
-        <a href="/foodrecipe_fee/shivansh/recipes1.html" class = "nav" >whats-today</a>
-        <a href="/foodrecipe_fee/cake2/home.html" class = "nav" >DesertGuide</a>
-        
+        <a href="#" class = "nav" >Home</a>
+        <a href="#" class = "nav" >Categories</a>
+        <a href="#" class = "nav" >Buy-items</a>
+        <a href="#" class = "nav" >Desserts Guide</a>
+        <a href="#" class = "nav" >What's for Today</a>
+        <a href="Favourites.html" class = "nav" >Favourites</a>
+        <a href="wishlist.html" target="_blank" class = "nav" >Wishlist</a>
     </nav>
     <br><br>
     <div class="frozen_header">
@@ -209,7 +209,7 @@
             <h3>Rajma Chawal</h3>
             <p>Comfort Food</p>
             <div class="product-item-actions">
-                <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                 <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
             </div>
@@ -220,7 +220,7 @@
             <h3>Cappucino</h3>
             <p>Drinks</p>
             <div class="product-item-actions">
-                <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                 <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
             </div>
@@ -233,7 +233,7 @@
                 <h3>Punjabi Chole Masala</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -244,7 +244,7 @@
                 <h3>Frozen Pizza - Farmhouse</h3>
                 <p>$2.99 / 16oz</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -255,7 +255,7 @@
                 <h3>Bhelpuri</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -266,7 +266,7 @@
                 <h3>Dal Tadka</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -277,7 +277,7 @@
                 <h3>Moong Dal Khichdi</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -288,7 +288,7 @@
                 <h3>Panipuri</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -299,7 +299,7 @@
                 <h3>Dosa</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -310,7 +310,7 @@
                 <h3>Idli Sambar</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -321,7 +321,7 @@
                 <h3>Medu Vada</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -332,7 +332,7 @@
                 <h3>Uttapam</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -343,7 +343,7 @@
                 <h3>Mango Rava</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -354,7 +354,7 @@
                 <h3>Modak</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -365,7 +365,7 @@
                 <h3>Kesar Kaju Katli</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -376,7 +376,7 @@
                 <h3>Prawn Fry</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -387,7 +387,7 @@
                 <h3>Payasam</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -398,7 +398,7 @@
                 <h3>Curd Rice</h3>
                 <p>South Indian</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -409,7 +409,7 @@
                 <h3>Veg Cutlets</h3>
                 <p>$2.99 / 16oz</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -420,7 +420,7 @@
                 <h3>Aloo Matar</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -431,7 +431,7 @@
                 <h3>Fried Rice</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -442,7 +442,7 @@
                 <h3>Gulab Jamun</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -453,7 +453,7 @@
                 <h3>Boiled Momos</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -464,7 +464,7 @@
                 <h3>Kurkure Momos</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -475,7 +475,7 @@
                 <h3>Dal Makhani</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -486,7 +486,7 @@
                 <h3>French Fries</h3>
                 <p>$2.99 / 16oz</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -497,7 +497,7 @@
                 <h3>Aloo Parantha</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -508,7 +508,7 @@
                 <h3>Aloo Gobhi</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -519,7 +519,7 @@
                 <h3>Butter Chicken</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -530,7 +530,7 @@
                 <h3>Fish Fry</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -541,7 +541,7 @@
                 <h3>Cheese Omlette</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -552,7 +552,7 @@
                 <h3>Egg Curry</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -563,7 +563,7 @@
                 <h3>Fish Curry</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -574,7 +574,7 @@
                 <h3>Chicken Biryani</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -585,7 +585,7 @@
                 <h3>Chicken Lollipop</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -596,7 +596,7 @@
                 <h3>Chicken 65</h3>
                 <p>Non Veg</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -607,7 +607,7 @@
                 <h3>Vada Pav</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -618,7 +618,7 @@
                 <h3>Mango Shake</h3>
                 <p>Drinks</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -629,7 +629,7 @@
                 <h3>Strawberry Shake</h3>
                 <p>Drinks</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -640,7 +640,7 @@
                 <h3>Noodles</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -651,7 +651,7 @@
                 <h3>Pav Bhaji</h3>
                 <p>Ready Meals</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -662,7 +662,7 @@
                 <h3>Sarson Ka Saag</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -673,7 +673,7 @@
                 <h3>Kadhi Pakoda</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -684,7 +684,7 @@
                 <h3>Jaljeera Drink</h3>
                 <p>Drinks</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -695,7 +695,7 @@
                 <h3>Gajar Mattar</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -706,7 +706,7 @@
                 <h3>Boondi Ladoo</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -717,7 +717,7 @@
                 <h3>Lassi</h3>
                 <p>$2.99 / 16oz</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -728,7 +728,7 @@
                 <h3>Pink Coconut Burfi</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -739,7 +739,7 @@
                 <h3>Strawberry Ladoo</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -750,7 +750,7 @@
                 <h3>Blueberry Mojito</h3>
                 <p>Drinks</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -761,7 +761,7 @@
                 <h3>Rasgulla</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                      <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                      <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
                 </div>
           </div>
@@ -772,7 +772,7 @@
                 <h3>Chocolate Cookie</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -783,7 +783,7 @@
                 <h3>Assam Masala Tea</h3>
                 <p>Drinks</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -794,7 +794,7 @@
                 <h3>Paneer Butter Masala</h3>
                 <p>Comfort Foods</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -805,7 +805,7 @@
                 <h3>Gajrela</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -816,7 +816,7 @@
                 <h3>Suji Halwa</h3>
                 <p>Desserts</p>
                 <div class="product-item-actions">
-                    <button class="cart" onclick={Cart(event)}>Add to Cart</button>
+                    <button class="cart" onclick={addToWishlist(event)}>Add To Wishlist</button>
                     <button class="remove" onclick="removeItem(event)">Remove</button>
             </div>
           </div>
@@ -844,12 +844,6 @@
             });
         });
 
-        function Cart(event){ // cart mein add krne ke liye 
-            let text = event.target;
-            text.innerText="Added to Cart";
-            text.style.backgroundColor="orange";
-        }
-
         document.getElementById('cat').addEventListener('change', function() { // food category select karne ke liye
             const selectedCategory = this.value;
             const productItems = document.querySelectorAll('.product-item');
@@ -864,13 +858,41 @@
                 }
             });
         });
-        
+
         function removeItem(event) { // food item remove krne ke liye 
             const buttonClicked = event.target; 
             const productItem = buttonClicked.closest('.product-item'); 
             productItem.remove(); 
         }
 
+
+
+
+
+
+        // ------------------
+        function addToWishlist(event) {
+            let text = event.target;
+            text.innerText="Added to Wishlist";
+            text.style.backgroundColor="orange";
+            const productItem = event.target.closest('.product-item');
+            const productName = productItem.querySelector('h3').innerText;
+            const productCategory = productItem.querySelector('p').innerText;
+            const productImage = productItem.querySelector('img').src;
+
+            const product = { name: productName, category: productCategory, image: productImage };
+
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            
+            // Add product to wishlist if not already present
+            if (!wishlist.some(item => item.name === productName)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert("Item added to wishlist!");
+            } else {
+                alert("Item is already in wishlist!");
+            }
+    }
     </script>
 </body>
 
