@@ -324,14 +324,6 @@
         text-align: center;
     }
 
-    #submitBtn{
-        padding:20px;
-        padding-left: 60px;
-        padding-right: 60px;
-        border-radius: 30px;
-        box-shadow: 1px 1px 3px 3px rgb(162, 162, 162);
-        background-color: rgb(0, 255, 0);
-    }
     .userComments{
         border: 1px solid black;
         border-radius: 30px;;
@@ -346,7 +338,31 @@
     padding: 10px;
     margin: 10px 0;
     background-color: #f9f9f9;
-}
+    }
+    #submitBtn{
+        padding:20px;
+        padding-left: 60px;
+        padding-right: 60px;
+        border-radius: 30px;
+        box-shadow: 1px 1px 3px 3px rgb(162, 162, 162);
+        background-color: rgb(135, 251, 135);
+    }
+    #submitBtn:hover{
+        background-color: rgb(0, 255, 0);
+    }
+    #deleteBtn{
+        background-color: rgba(253, 79, 79, 0.921);
+        color: white;
+        font-size: 10px;
+        border-radius: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    #deleteBtn:hover{
+        background-color: rgb(232, 2, 2);
+    }
     </style>
 </head>
 
@@ -597,20 +613,75 @@
     ingredientsSlider.style.transform = `translateX(-${currentSlide2 * 100}%)`;
 }
     
-function ReviewFunc() {
-    let name = document.getElementById('name').value;
-    let review = document.getElementById('review').value;
+// function ReviewFunc() {
+//     let name = document.getElementById('name').value;
+//     let review = document.getElementById('review').value;
 
-    const reviewDiv = document.createElement('div');
-    reviewDiv.classList.add('reviewItem'); // yeh new class add kr deta hai jo div create hoga after every review
+//     const reviewDiv = document.createElement('div');
+//     reviewDiv.classList.add('reviewItem'); // yeh new class add kr deta hai jo div create hoga after every review
 
-    reviewDiv.innerHTML = `<h3>${name}</h3><p>${review}</p>`;
+//     reviewDiv.innerHTML = `<h3>${name}</h3><p>${review}</p>`;
 
-    document.getElementById('userComments').appendChild(reviewDiv);
+//     document.getElementById('userComments').appendChild(reviewDiv);
 
-    document.getElementById('name').value = '';
-    document.getElementById('review').value = '';
-}
+//     document.getElementById('name').value = '';
+//     document.getElementById('review').value = '';
+// }
+
+
+// ------------------------------------
+
+window.onload = function() {
+            loadComments();
+        };
+
+        function ReviewFunc() {
+            let name = document.getElementById('name').value;
+            let review = document.getElementById('review').value;
+
+            if (name && review) {
+                const comment = { name, review };
+                saveComment(comment);
+                displayComment(comment);
+                clearInputs();
+            } else {
+                alert("Please fill in both fields.");
+            }
+        }
+
+        function saveComment(comment) {
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+
+        function loadComments() {
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.forEach(comment => displayComment(comment));
+        }
+
+        function displayComment(comment) {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('reviewItem');
+            reviewDiv.innerHTML = `
+                <h3>${comment.name}</h3>
+                <p>${comment.review}</p>
+                <button onclick="deleteComment('${comment.name}', '${comment.review}')" id="deleteBtn">Delete Comment</button>
+            `;
+            document.getElementById('userComments').appendChild(reviewDiv);
+        }
+
+        function deleteComment(name, review) {
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments = comments.filter(comment => !(comment.name === name && comment.review === review));
+            localStorage.setItem('comments', JSON.stringify(comments));
+            location.reload(); 
+        }
+
+        function clearInputs() {
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+        }
     </script>
 </body>
 

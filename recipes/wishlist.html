@@ -14,22 +14,19 @@
     <div id="WishlistBox">
         <div id="textWishlist">
             <h1><marquee behavior="" direction="right">Your Wishlist</marquee></h1>
-            <a href="Favourites.html" target="_blank" class="Home"><button>Back to recipe page</button></a>
+            <a href="Favourites.html" target="_blank" class="Home"><button>Back to Recipe Page</button></a>
         </div>
     </div>
     <div class="product-grid" id="wishlistContainer"></div> <!-- Container for wishlist items -->
     <script>
-        // Function to load wishlist items on wishlist.html
         function loadWishlistItems() {
             const wishlistContainer = document.getElementById('wishlistContainer');
             if (!wishlistContainer) return;
 
             const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-            // Clear any existing items
             wishlistContainer.innerHTML = ''; 
             
-            // Display each wishlist item
             wishlist.forEach((item, index) => {
                 const productItem = document.createElement('div');
                 productItem.classList.add('product-item');
@@ -47,24 +44,19 @@
             });
         }
 
-        // Function to remove an item from wishlist with confirmation
         function removeFromWishlist(index) {
-            // Show confirmation dialog
             const confirmRemoval = window.confirm("Are you sure you want to remove this item from your wishlist?");
             
             if (confirmRemoval) {
                 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-                // Remove item by index
                 wishlist.splice(index, 1);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
-                // Reload the wishlist display
                 loadWishlistItems();
             }
         }
 
-        // Load items when the page loads
         document.addEventListener('DOMContentLoaded', loadWishlistItems);
     </script>
 </body>
