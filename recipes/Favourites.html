@@ -81,19 +81,19 @@
     }
     @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr); /* Two products per row on medium screens */
     }
 }
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* One product per row on small screens */
     }
 }
     .product-item{
         border: 1px solid rgba(128, 128, 128, 0.45);
         display: inline-block;
         border-radius: 8px;
-        overflow: hidden; 
+        overflow: hidden; /* overflow hidden - it hides the image when it overflow the border */
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
     }
@@ -199,7 +199,7 @@
             <option value="South Indian">South Indian Cuisine</option>
             <option value="Drinks">Drinks</option>
         </select>
-        <!-- <label for="search"><input type="search" placeholder="Search frozen foods..." id="search"></label> -->
+        <label for="search"><input type="search" placeholder="Search frozen foods..." id="search"></label>
     </div>
     <br>
     <div class="product-grid">
