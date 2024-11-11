@@ -544,12 +544,12 @@
         }
 
         function generateShareLink() {
-            return 'https://fusionflare.com/recipe/avocado-toast-with-eggs';
+            return 'http://127.0.0.1:5500/foodrecipe_fee/recipes/CholeMasala.html';
         }
 
         function shareOnWhatsApp() {
             var shareLink = generateShareLink();
-            var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Check out this amazing Avocado Toast With Eggs recipe: ' + shareLink);
+            var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Check out this amazing Chole Masala recipe: ' + shareLink);
             window.open(whatsappUrl, '_blank');
         }
 
