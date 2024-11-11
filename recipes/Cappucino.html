@@ -550,7 +550,7 @@
 
         function shareOnWhatsApp() {
             var shareLink = generateShareLink();
-            var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Check out this amazing Avocado Toast With Eggs recipe: ' + shareLink);
+            var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Check out this amazing Cappucino recipe: ' + shareLink);
             window.open(whatsappUrl, '_blank');
         }
 
@@ -612,22 +612,6 @@
     const ingredientsSlider = document.querySelector('.ingredients');
     ingredientsSlider.style.transform = `translateX(-${currentSlide2 * 100}%)`;
 }
-    
-// function ReviewFunc() {
-//     let name = document.getElementById('name').value;
-//     let review = document.getElementById('review').value;
-
-//     const reviewDiv = document.createElement('div');
-//     reviewDiv.classList.add('reviewItem'); // yeh new class add kr deta hai jo div create hoga after every review
-
-//     reviewDiv.innerHTML = `<h3>${name}</h3><p>${review}</p>`;
-
-//     document.getElementById('userComments').appendChild(reviewDiv);
-
-//     document.getElementById('name').value = '';
-//     document.getElementById('review').value = '';
-// }
-
 
 // ------------------------------------
 

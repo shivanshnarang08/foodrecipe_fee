@@ -174,12 +174,12 @@
 <body>
     <nav>
         <img src="logo.png" alt="404 Image not found" width="9%" id = "logo">
-        <a href="/foodrecipe_fee/shivansh/homepage.html" class = "nav" >Home</a>
+        <a href="#" class = "nav" >Home</a>
         <a href="#" class = "nav" >Categories</a>
-        <a href="/foodrecipe_fee/buyitems/grocery.html" class = "nav" >Buy-items</a>
-        <a href="/foodrecipe_fee/cake2/home.html" class = "nav" >Desserts Guide</a>
-        <a href="/foodrecipe_fee/shivansh/recipes1.html" class = "nav" >What's for Today</a>
-        <!-- <a href="Favourites.html" class = "nav" >Favourites</a> -->
+        <a href="#" class = "nav" >Buy-items</a>
+        <a href="#" class = "nav" >Desserts Guide</a>
+        <a href="#" class = "nav" >What's for Today</a>
+        <a href="Favourites.html" class = "nav" >Favourites</a>
         <a href="wishlist.html" target="_blank" class = "nav" >Wishlist</a>
     </nav>
     <br><br>
@@ -199,8 +199,8 @@
             <option value="South Indian">South Indian Cuisine</option>
             <option value="Drinks">Drinks</option>
         </select>
-        <!-- <label for="search"><input type="search" placeholder="Search frozen foods..." id="search"></label>!-->
-    </div> 
+        <label for="search"><input type="search" placeholder="Search frozen foods..." id="search"></label>
+    </div>
     <br>
     <div class="product-grid">
         <div class="product-item" data-category="Comfort Foods">
@@ -853,7 +853,7 @@
                     item.style.display = 'block';
                     document.getElementById("frozen_data1").innerText= "All Categories";
                 } else {
-                    item.style.display = item.getAttribute('data-category') === selectedCategory ? 'block' : 'none';
+                    item.style.display = item.getAttribute('data-category') == selectedCategory ? 'block' : 'none';
                     document.getElementById("frozen_data1").innerText= selectedCategory;
                 }
             });
@@ -884,11 +884,9 @@
 
             let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
             
-            // Add product to wishlist if not already present
             if (!wishlist.some(item => item.name === productName)) {
                 wishlist.push(product);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                alert("Item added to wishlist!");
             } else {
                 alert("Item is already in wishlist!");
             }

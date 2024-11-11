@@ -1,91 +1,28 @@
-nav{
-    padding-left: 50px;
-    margin-left:30px;
-    font-size: 18px;;
-    text-decoration: none;
-    font-weight:lighter;
-    color : rgba(0, 0, 0, 0.687);
-    transition: color 0.5s ease;
-    font-family: "PT Sans", sans-serif;
-}
-.nav:hover{
-    color : rgba(255, 153, 0, 0.845);
-    transform: rotate();
-}
-
-
-#logo{
-    margin:0px;
-    padding-right: 50px;
-    position: relative;
-    top:20px;
-    left: 38px;
-}
-.frozen_header{
-    display:block;
-    background-color: rgb(0, 174, 255);
-    margin-left: 0;
-    margin-right: 0;
-    padding: 20px;;
-}
-#frozen_data1{
-    font-family: "Righteous", sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-}
-#frozen_data2{
-    font-family: "League Spartan", sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-weight: 450;
-    text-align: center;
-}
-#cat{
-    background-color: rgba(0, 179, 255, 0.467);
-    padding:20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 12px;
-    border: 1px solid black;
-}
-#cat:hover{
-    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.198);;
-}
-.cat_search #search{
-    border:1px solid black;
-    padding: 15px;
-    position: absolute;        
-    left: 1300px;
-    
-    border-radius: 10px;
-}
 .product-grid {
 display: grid;
-/* grid-template-columns: repeat(auto-fill, minmax(290px,363px)); */
+grid-template-columns: repeat(auto-fill, minmax(290px,363px));
 grid-template-columns: repeat(auto-fill, minmax(290px,1fr));
 gap: 20px;
 padding: 40px 0;
 }
 @media (max-width: 768px) {
 .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two products per row on medium screens */
+    grid-template-columns: repeat(2, 1fr); 
 }
 }
 @media (max-width: 480px) {
 .product-grid {
-    grid-template-columns: 1fr; /* One product per row on small screens */
+    grid-template-columns: 1fr; 
 }
 }
 .product-item{
     border: 1px solid rgba(128, 128, 128, 0.45);
     display: inline-block;
     border-radius: 8px;
-    overflow: hidden; /* overflow hidden - it hides the image when it overflow the border */
+    overflow: hidden;  /*overflow:hidden - it hides the image when it overflow the border*/
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-}
+} 
 
 .product-item:hover {
     transform: translateY(-7px);
