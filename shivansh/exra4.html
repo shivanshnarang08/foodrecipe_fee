@@ -23,10 +23,16 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             
               <input name="password" type="text" id="password" placeholder="password" required="">
+
           </div>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            
+            <input name="number" type="number" id="number" placeholder="Phone Number" required="">
+        </div>
             
               <button type="submit" id="form-submit" >Send Message</button>
           </div>
+          
         </div>
       </form>
     <script type="module">
@@ -54,13 +60,16 @@
             const name=document.getElementById('name').value;
             const email=document.getElementById('email').value;
             const password=document.getElementById('password').value;
-            console.log(name,email,password);
+            const number=document.getElementById('number').value;
+
+            console.log(name,email,password,number);
             createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const docRef=setDoc(doc(fs,"users",userCredential.user.uid),{
                     name:name,
                     email:email,
                     password:password,
+                    number:number
                 });
             })
             .catch((error) => {
