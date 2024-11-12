@@ -213,24 +213,19 @@
      </div>
   
      <script>
-        // Function to load and display cart items from localStorage
         function loadCart() {
-            // Retrieve the cart items from localStorage
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Reference to the cart items container
             let cartItemsContainer = document.getElementById('cart-items');
             let totalPrice = 0;
             let itemsCount = 0;
 
-            // Check if the cart has items
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty.</td></tr>';
                 return;
             }
             cartItemsContainer.innerHTML = '';
 
-            // Loop through cart items and display them
             cart.forEach((item, index) => {
                 const name = item.name || 'Unnamed Product';
                 const price = item.price || 0;
@@ -238,7 +233,7 @@
                 totalPrice += price;
                 itemsCount++;
 
-                // Append each item to the cartItemsContainer
+
                 cartItemsContainer.innerHTML += `
                     <tr>
                         <td><img src="${image}" alt="${name}"></td>
@@ -251,34 +246,19 @@
                 `;
             });
 
-            // Update total and item count
             document.getElementById('total-price').innerText = `₹${totalPrice}`;
             document.getElementById('totalnum').innerText = `${itemsCount} items`;
             document.getElementById('itemscheckout').innerText = itemsCount;
             document.getElementById('total-mrp').innerText = `₹${totalPrice}`;
         }
 
-        // Function to remove an item from the cart
         function removeItem(index) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.splice(index, 1); // Remove item from array
-            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
-            loadCart(); // Reload the cart
+            cart.splice(index, 1); 
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            loadCart(); 
         }
-        function removeItem(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Remove the item at the given index
-    cart.splice(index, 1);
-    
-    // Update localStorage with the new cart array
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Reload the cart items to reflect the changes
-    loadCart();
-}
-
-        // Load cart items on page load
+        
         window.onload = loadCart;
     </script>
 
