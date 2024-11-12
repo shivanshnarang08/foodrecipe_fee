@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1.css">
+    <script src="1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+        <div class="recipe-container">
+            <h1>Chocolate Chip Cookies</h1>
+            
+            <div class="servings-control">
+                <label>Servings: </label>
+                <button onclick="adjustServings(-1)">-</button>
+                <span id="servings">12</span>
+                <button onclick="adjustServings(1)">+</button>
+            </div>
+    
+            <div class="ingredient-list">
+                <h2>Ingredients:</h2>
+                <ul>
+                    <li><span class="amount" data-base="2.25">2.25</span> cups flour</li>
+                    <li><span class="amount" data-base="1">1</span> cup butter</li>
+                    <li><span class="amount" data-base="0.75">0.75</span> cup sugar</li>
+                    <li><span class="amount" data-base="2">2</span> eggs</li>
+                    <li><span class="amount" data-base="2">2</span> cups chocolate chips</li>
+                </ul>
+            </div>
+    
+            <div class="timer">
+                <h3>Baking Timer</h3>
+                <div id="timer-display">12:00</div>
+                <div class="timer-buttons">
+                    <button onclick="startTimer()">Start Timer</button>
+                    <button onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

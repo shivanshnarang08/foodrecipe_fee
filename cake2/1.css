@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Beautiful Typography and Base Styles */
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #e74c3c, #f39c12);
+    border-radius: 2px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin: 1.5rem 0;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card-like Container Styles */
+  .recipe-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+  }
+  
+  /* Servings Control Styling */
+  .servings-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .servings-control label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  #servings {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e74c3c;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  /* Ingredient List Styling */
+  .ingredient-list {
+    margin: 30px 0;
+  }
+  
+  .ingredient-list ul {
+    list-style: none;
+  }
+  
+  .ingredient-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ingredient-list li::before {
+    content: '•';
+    color: #e74c3c;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+  .amount {
+    font-weight: 600;
+    color: #e74c3c;
+    margin-right: 5px;
+  }
+  
+  /* Timer Styling */
+  .timer {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0;
+    text-align: center;
+  }
+  
+  #timer-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 20px 0;
+    font-family: monospace;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timer-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+  
+    h1 {
+        font-size: 2rem;
+    }
+  
+    .recipe-container {
+        padding: 20px;
+    }
+  
+    #timer-display {
+        font-size: 2rem;
+    }
+  }
+  
+  /* Smooth Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .recipe-container {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  
