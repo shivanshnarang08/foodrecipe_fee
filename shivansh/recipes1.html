@@ -26,7 +26,6 @@
     <section class="recipes breakfast">
         <h2 class="recipe-title1">Breakfast Recipes</h2>
         <div class="recipe-container" id="breakfast-container">
-            <!-- Existing Recipe Cards -->
             <div class="recipe-card">
                 <img src="seo-pancakes-232.webp" alt="Stack of fluffy pancakes with syrup, rustic wooden background" class="recipe-image" width="250" height="150">
                 <div class="recipe-info">
@@ -59,7 +58,6 @@
                     <a href="details.html" class="view-recipe-btn">View Recipe</a>
                 </div>
             </div>
-            <!-- Additional Recipe Cards -->
             <div class="recipe-card">
                 <img src="rainbow.jpeg" alt="Breakfast burrito wrapped in foil, cut in half to show filling" class="recipe-image" width="250" height="150">
                 <div class="recipe-info">
@@ -100,7 +98,6 @@
     <section class="recipes lunch">
         <h2 class="recipe-title1">Lunch Recipes</h2>
         <div class="recipe-container" id="lunch-container">
-            <!-- Existing Recipe Cards -->
             <div class="recipe-card">
                 <img src="Grilled Cheese Sandwich.jpeg" alt="Grilled cheese sandwich cut diagonally, melted cheese visible" class="recipe-image" width="250" height="150">
                 <div class="recipe-info">
@@ -133,7 +130,6 @@
                     <a href="details.html" class="view-recipe-btn">View Recipe</a>
                 </div>
             </div>
-            <!-- Additional Recipe Cards -->
             <div class="recipe-card">
                 <img src="burger.jpeg" alt="Homemade veggie burger with lettuce and tomato on a brioche bun" class="recipe-image" width="250" height="150">
                 <div class="recipe-info">
@@ -174,7 +170,6 @@
     <section class="recipes dinner">
         <h2 class="recipe-title1">Dinner Recipes</h2>
         <div class="recipe-container" id="dinner-container">
-            <!-- Existing Recipe Cards -->
             <div class="recipe-card">
                 <img src="Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese with parmesan cheese on top, served on a white plate" class="recipe-image" width="250" height="150">
                 <div class="recipe-info">
@@ -247,7 +242,7 @@
     function scroll(containerId, direction) {
         const container = document.getElementById(containerId);
         const scrollAmount = direction * container.offsetWidth;
-        container.scrollBy({ right: scrollAmount, behavior: 'smooth' });
+        container.scrollBy({ behavior: 'smooth' });
     }
     </script>
 </body>

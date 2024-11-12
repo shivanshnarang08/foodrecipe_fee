@@ -30,6 +30,7 @@ function displayResults(results) {
             <h2>${recipe.label}</h2>
             <img src="${recipe.image}" alt="${recipe.label}" />
             <p>Source: ${recipe.source}</p>
+
          
            
            
