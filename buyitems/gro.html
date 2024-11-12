@@ -13,16 +13,22 @@
             background-color: #f4f4f4;
         }
         
-        .item-container {
+        .container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             margin: 0 auto;
             max-width: 1200px;
             padding: 20px;
+            background-color: #f4f4f4;
+            gap: 20px; 
+        }
+
+        .shopping-bag-content {
+            flex: 1;
             background-color: #fff;
             border-radius: 8px;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            gap: 20px; /* Adds space between the two sections */
         }
   
         .head {
@@ -69,13 +75,28 @@
             height: auto;
             border-radius: 4px;
         }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-controls button {
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
   
         .price-details-container {
-            background: #f9f9f9;
+            width: 300px;
+            background: #fff;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0; /* Prevents shrinking in flex containers */
+            position: sticky;
+            top: 20px; 
+            height: fit-content;
         }
   
         .price-details {
@@ -97,12 +118,6 @@
             color: #d9534f;
         }
   
-        .apply-coupon, .know-more {
-            color: #007bff;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-  
         .generate_qr {
             padding: 12px;
             background-color: #28a745;
@@ -114,63 +129,44 @@
             font-weight: bold;
             transition: background-color 0.3s;
             width: 100%;
+            text-align: center;
+            display: block;
+            text-decoration: none;
         }
-        .remove-btn {
-    background-color: #e74c3c; /* Red background */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    padding: 5px 10px; /* Add padding around the text */
-    cursor: pointer; /* Change cursor to pointer */
-    border-radius: 5px; /* Round the corners */
-    font-size: 0.9em; /* Make text slightly smaller */
-    transition: background-color 0.3s; /* Smooth transition on hover */
-}
-
-.remove-btn:hover {
-    background-color: #c0392b; /* Darker red when hovered */
-}
-
   
-        .place-order-btn:hover {
+        .generate_qr:hover {
             background-color: #218838;
         }
   
-        @media (min-width: 768px) {
-            .item-container {
-                flex-direction: row;
-                align-items: flex-start; /* Align items to the start in larger screens */
-            }
-  
-            .shopping-bag-content {
-                flex: 1;
-            }
-  
-            .price-details-container {
-                width: 300px;
-                margin-left: 20px;
-            }
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
         }
-  
+
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+
         @media (max-width: 767px) {
+            .container {
+                flex-direction: column;
+                gap: 0;
+            }
             .price-details-container {
+                width: 100%;
                 margin-top: 20px;
-            }
-        }
-  
-        @media (min-width: 1280px) {
-            .item-container {
-                padding: 30px;
-            }
-  
-            .price-details-container {
-                width: 350px;
-                margin-left: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="item-container">
+    <div class="container">
         <div class="shopping-bag-content">
            <p class="head">Shopping Bag</p>
            <p class="total"><span id="totalnum">0 items</span> in your bag.</p>
@@ -195,10 +191,10 @@
                  <span>Total MRP</span>
                  <span id="total-mrp">₹0</span>
               </div>
-              <div class="price-row">
+              <!-- <div class="price-row">
                  <span>Discount on MRP</span>
                  <span id="discount">- ₹0</span>
-              </div>
+              </div> -->
               <div class="price-row">
                  <span>Shipping Fee</span>
                  <span class="discount">FREE</span>
@@ -215,13 +211,16 @@
      <script>
         function loadCart() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
             let cartItemsContainer = document.getElementById('cart-items');
             let totalPrice = 0;
             let itemsCount = 0;
 
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty.</td></tr>';
+                document.getElementById('total-price').innerText = `₹0`;
+                document.getElementById('totalnum').innerText = `0 items`;
+                document.getElementById('itemscheckout').innerText = `0`;
+                document.getElementById('total-mrp').innerText = `₹0`;
                 return;
             }
             cartItemsContainer.innerHTML = '';
@@ -230,17 +229,23 @@
                 const name = item.name || 'Unnamed Product';
                 const price = item.price || 0;
                 const image = item.image || 'default-image.jpg';
-                totalPrice += price;
-                itemsCount++;
+                const quantity = item.quantity || 1;
+                const itemTotal = price * quantity;
 
+                totalPrice += itemTotal;
+                itemsCount += quantity;
 
                 cartItemsContainer.innerHTML += `
                     <tr>
                         <td><img src="${image}" alt="${name}"></td>
                         <td>${name}</td>
                         <td>₹${price}</td>
-                        <td>1</td> <!-- Assuming quantity is 1 for each item -->
-                        <td>₹${price}</td>
+                        <td class="quantity-controls">
+                            <button onclick="decreaseQuantity(${index})">-</button>
+                            <span>${quantity}</span>
+                            <button onclick="increaseQuantity(${index})">+</button>
+                        </td>
+                        <td>₹${itemTotal}</td>
                         <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
                     </tr>
                 `;
@@ -252,15 +257,33 @@
             document.getElementById('total-mrp').innerText = `₹${totalPrice}`;
         }
 
+        function increaseQuantity(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = (cart[index].quantity || 1) + 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function decreaseQuantity(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                removeItem(index);
+                return;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
         function removeItem(index) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.splice(index, 1); 
-            localStorage.setItem('cart', JSON.stringify(cart)); 
-            loadCart(); 
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
         }
         
         window.onload = loadCart;
     </script>
-
 </body>
 </html>
